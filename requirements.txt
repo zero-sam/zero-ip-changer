@@ -1,0 +1,7 @@
+# System dependencies
+tor
+python3
+
+#Python dependencies
+stem
+requests
