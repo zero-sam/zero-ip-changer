@@ -10,6 +10,7 @@ sudo apt install -y tor python3 python3-pip
 
 # Install virtualenv if not already installed
 echo "Installing virtualenv..."
+sudo apt install python3-venv
 sudo pip3 install virtualenv --break-system-packages
 
 # Create a virtual environment
