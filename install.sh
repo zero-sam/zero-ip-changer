@@ -22,7 +22,7 @@ source ~/zero-ip-changer-env/bin/activate
 
 # Install required Python libraries within the virtual environment
 echo "Installing required Python libraries..."
-pip install -r requirements.txt
+pip install -r requirements.txt --break-system-packages
 
 # Configure Tor Control Port
 echo "Configuring Tor to allow control port access..."
