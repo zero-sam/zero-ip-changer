@@ -32,6 +32,10 @@ sudo bash -c 'echo -e "\nControlPort 9051\nCookieAuthentication 1\nCookieAuthFil
 echo "Restarting Tor service..."
 sudo service tor restart 
 
+# Add user to debian-tor group
+echo "Adding user to debian-tor group..."
+sudo usermod -aG debian-tor $(whoami)
+
 # Change permissions for the script file
 echo "Changing permissions for the script file..."
 sudo chown $(whoami):$(whoami) /home/kali/zero-ip-changer/cli.py
