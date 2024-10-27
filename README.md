@@ -26,19 +26,20 @@ To install the required software and dependencies, follow these steps:
 
 
 
-Run the installation script:
+2.**Run the installation script:
 
-bash
+```bash
 
 ./install.sh
-
+```
 
 Start Tor: Before running the application, ensure that the Tor service is running. You can start it using:
 
-
+```
 sudo systemctl start tor
-
+```
 Usage
-
+```
  python cli.py (OR)
  sudo python cli.py
+```
