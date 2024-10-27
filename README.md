@@ -29,8 +29,8 @@ To install the required software and dependencies, follow these steps:
 2.**Run the installation script:
 
 ```bash
-
-./install.sh
+chmod +x install.sh
+sudo bash install.sh
 ```
 
 Start Tor: Before running the application, ensure that the Tor service is running. You can start it using:
