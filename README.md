@@ -48,7 +48,6 @@ Usage
  sudo python cli.py
 ```
 
-Certainly! Here are some common troubleshooting steps and commands you can add to the README under a **Troubleshooting** section:
 
 ---
 
@@ -121,8 +120,21 @@ INSTAGRAM: https://www.instagram.com/__.sam.___07/
    - Or check the Tor log for possible issues:
      ```bash
      tail -f /var/log/tor/log
-     ```
 
----
 
-These troubleshooting steps should cover the most common issues your users might encounter. Feel free to add or customize these based on your tool's specific requirements!
+```
+
+
+
+
+
+![ipchanger](https://github.com/user-attachments/assets/fbadaa0c-32e5-49c0-b3fd-78897e386b1c)
+
+
+
+
+
+
+
+
+
