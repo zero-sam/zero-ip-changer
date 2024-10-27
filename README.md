@@ -6,6 +6,7 @@ A command-line tool to dynamically change your IP address using Tor.
 
 - Change IP address at regular intervals.
 - Fetch and display IP and location information.
+- Uses TOR Routers for Enhanced Privacy
 
 ## Requirements
 
@@ -13,6 +14,9 @@ A command-line tool to dynamically change your IP address using Tor.
 - **Tor** (should be installed on the system)
 - **Requests library** for HTTP requests
 - **Stem library** for interacting with Tor
+- WORKS ONLY ON LINUX
+- WINDOWS UPDATE WILL BE GIVEN IN COUPLE MONTHS OR EARLY 2025
+
 
 ## Installation
 
@@ -43,3 +47,82 @@ Usage
  python cli.py (OR)
  sudo python cli.py
 ```
+
+Certainly! Here are some common troubleshooting steps and commands you can add to the README under a **Troubleshooting** section:
+
+---
+
+### Troubleshooting
+
+### IF THE BELOW PROBLEM PRESISTS AFTER FOLLOWING THE STEPS BELOW FEEL FREE TO CONTACT ME VIA 
+LINKEDIN: https://www.linkedin.com/in/samuel-e-050636269/
+INSTAGRAM: https://www.instagram.com/__.sam.___07/
+
+#### 1. **Tor Service Not Running**
+   - Ensure the Tor service is running, as the IP changer relies on it. Start the Tor service with:
+     ```bash
+     sudo systemctl start tor
+     ```
+   - To check if Tor is active, run:
+     ```bash
+     sudo systemctl status tor
+     ```
+   - If the service is inactive or not found, try reinstalling Tor:
+     ```bash
+     sudo apt update
+     sudo apt install tor
+     ```
+
+#### 2. **Permission Denied Error**
+   - If you encounter a permission error while running `cli.py`, try running it with `sudo`:
+     ```bash
+     sudo python3 cli.py
+     ```
+   - Ensure that the Tor control port (`9051` by default) is accessible. Double-check your `/etc/tor/torrc` file to confirm it has:
+     ```bash
+     ControlPort 9051
+     CookieAuthentication 1
+     ```
+
+#### 3. **Missing Packages**
+   - If you see errors related to missing Python packages (e.g., `requests` or `stem`), activate the virtual environment and reinstall the dependencies:
+     ```bash
+     source ~/zero-ip-changer-env/bin/activate
+     pip install -r requirements.txt
+     ```
+   - If you are using system-wide Python packages, you can install the dependencies manually:
+     ```bash
+     pip install requests stem
+     ```
+
+#### 4. **Tor Not Changing IPs**
+   - The Tor network may sometimes reuse IPs, depending on availability. Ensure the interval between IP changes is at least 10 seconds, as Tor requires time to establish new circuits.
+   - You can test if Tor is configured correctly by checking your IP manually:
+     ```bash
+     curl --socks5 127.0.0.1:9050 http://ipinfo.io/json
+     ```
+   - If the IP isn’t changing, restart the Tor service to reset connections:
+     ```bash
+     sudo service tor restart
+     ```
+
+#### 5. **Testing Network Connectivity**
+   - Ensure your network allows connections to the Tor network. Some networks may restrict Tor usage. To check connectivity:
+     ```bash
+     curl http://ipinfo.io/json
+     ```
+   - If you don’t receive an IP, verify your internet connection.
+
+#### 6. **General Debugging**
+   - If errors persist, try running `cli.py` in verbose mode to capture error messages:
+     ```bash
+     python3 -m trace -t cli.py
+     ```
+   - Or check the Tor log for possible issues:
+     ```bash
+     tail -f /var/log/tor/log
+     ```
+
+---
+
+These troubleshooting steps should cover the most common issues your users might encounter. Feel free to add or customize these based on your tool's specific requirements!
